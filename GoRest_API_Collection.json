@@ -1,0 +1,275 @@
+{
+  "v": 11,
+  "name": "GoRest API Collection",
+  "folders": [],
+  "requests": [
+    {
+      "v": "17",
+      "name": "Create User",
+      "method": "POST",
+      "endpoint": "https://gorest.co.in/public/v2/users",
+      "params": [],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Content-Type", "value": "application/json", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "pw.env.set(\"timestamp\", Date.now().toString());",
+      "testScript": "const res = pw.response.body;\nif (res && res.id) {\n  pw.env.set(\"user_id\", String(res.id));\n}",
+      "auth": { "authType": "none", "authActive": false },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\"name\": \"Scan Test User\", \"email\": \"scantest_<<timestamp>>@example.com\", \"gender\": \"male\", \"status\": \"active\"}"
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Get All Users",
+      "method": "GET",
+      "endpoint": "https://gorest.co.in/public/v2/users",
+      "params": [
+        { "key": "page", "value": "1", "active": true, "description": "" },
+        { "key": "per_page", "value": "10", "active": true, "description": "" }
+      ],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": { "authType": "none", "authActive": false },
+      "body": { "contentType": null, "body": null },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Get User by ID",
+      "method": "GET",
+      "endpoint": "https://gorest.co.in/public/v2/users/<<user_id>>",
+      "params": [],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": { "authType": "none", "authActive": false },
+      "body": { "contentType": null, "body": null },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Update User",
+      "method": "PATCH",
+      "endpoint": "https://gorest.co.in/public/v2/users/<<user_id>>",
+      "params": [],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Content-Type", "value": "application/json", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": { "authType": "none", "authActive": false },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\"name\": \"Updated Scan User\", \"status\": \"inactive\"}"
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Delete User",
+      "method": "DELETE",
+      "endpoint": "https://gorest.co.in/public/v2/users/<<user_id>>",
+      "params": [],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": { "authType": "none", "authActive": false },
+      "body": { "contentType": null, "body": null },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Create Post",
+      "method": "POST",
+      "endpoint": "https://gorest.co.in/public/v2/posts",
+      "params": [],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Content-Type", "value": "application/json", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "const res = pw.response.body;\nif (res && res.id) {\n  pw.env.set(\"post_id\", String(res.id));\n}",
+      "auth": { "authType": "none", "authActive": false },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\"user_id\": <<user_id>>, \"title\": \"Test Post for Scanning\", \"body\": \"This is a test post body used for DAST scanning.\"}"
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Get All Posts",
+      "method": "GET",
+      "endpoint": "https://gorest.co.in/public/v2/posts",
+      "params": [
+        { "key": "page", "value": "1", "active": true, "description": "" },
+        { "key": "per_page", "value": "10", "active": true, "description": "" }
+      ],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": { "authType": "none", "authActive": false },
+      "body": { "contentType": null, "body": null },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Get Post by ID",
+      "method": "GET",
+      "endpoint": "https://gorest.co.in/public/v2/posts/<<post_id>>",
+      "params": [],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": { "authType": "none", "authActive": false },
+      "body": { "contentType": null, "body": null },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Delete Post",
+      "method": "DELETE",
+      "endpoint": "https://gorest.co.in/public/v2/posts/<<post_id>>",
+      "params": [],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": { "authType": "none", "authActive": false },
+      "body": { "contentType": null, "body": null },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Get All Comments",
+      "method": "GET",
+      "endpoint": "https://gorest.co.in/public/v2/comments",
+      "params": [
+        { "key": "page", "value": "1", "active": true, "description": "" }
+      ],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": { "authType": "none", "authActive": false },
+      "body": { "contentType": null, "body": null },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Create Comment",
+      "method": "POST",
+      "endpoint": "https://gorest.co.in/public/v2/comments",
+      "params": [],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Content-Type", "value": "application/json", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": { "authType": "none", "authActive": false },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\"post_id\": <<post_id>>, \"name\": \"Test Commenter\", \"email\": \"commenter_<<timestamp>>@example.com\", \"body\": \"This is a test comment for scanning.\"}"
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Get All Todos",
+      "method": "GET",
+      "endpoint": "https://gorest.co.in/public/v2/todos",
+      "params": [
+        { "key": "page", "value": "1", "active": true, "description": "" }
+      ],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": { "authType": "none", "authActive": false },
+      "body": { "contentType": null, "body": null },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    },
+    {
+      "v": "17",
+      "name": "Create Todo",
+      "method": "POST",
+      "endpoint": "https://gorest.co.in/public/v2/todos",
+      "params": [],
+      "headers": [
+        { "key": "Authorization", "value": "Bearer <<token>>", "active": true, "description": "" },
+        { "key": "Content-Type", "value": "application/json", "active": true, "description": "" },
+        { "key": "Accept", "value": "application/json", "active": true, "description": "" }
+      ],
+      "preRequestScript": "",
+      "testScript": "",
+      "auth": { "authType": "none", "authActive": false },
+      "body": {
+        "contentType": "application/json",
+        "body": "{\"user_id\": <<user_id>>, \"title\": \"Test Todo Item\", \"due_on\": \"2026-05-01T00:00:00.000+05:30\", \"status\": \"pending\"}"
+      },
+      "requestVariables": [],
+      "responses": {},
+      "description": null
+    }
+  ],
+  "auth": { "authType": "inherit", "authActive": true },
+  "headers": [],
+  "variables": [],
+  "description": null
+}

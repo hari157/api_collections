@@ -1,0 +1,31 @@
+{
+  "id": "gorest-env-001",
+  "v": 2,
+  "name": "GoRest Environment",
+  "variables": [
+    {
+      "key": "token",
+      "secret": false,
+      "initialValue": "8fe57a44af0b78b83e7cf1952445a61185098c0d990822db7b45ffe2ce5febba",
+      "currentValue": "8fe57a44af0b78b83e7cf1952445a61185098c0d990822db7b45ffe2ce5febba"
+    },
+    {
+      "key": "user_id",
+      "secret": false,
+      "initialValue": "",
+      "currentValue": ""
+    },
+    {
+      "key": "post_id",
+      "secret": false,
+      "initialValue": "",
+      "currentValue": ""
+    },
+    {
+      "key": "timestamp",
+      "secret": false,
+      "initialValue": "",
+      "currentValue": ""
+    }
+  ]
+}
